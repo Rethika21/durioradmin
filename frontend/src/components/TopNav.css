@@ -1,0 +1,280 @@
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-menu-link {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+.nav-menu-link:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+}
+
+.nav-menu-link.active {
+  background: #2563eb;
+  color: white;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+}
+
+.nav-profile {
+  position: relative;
+}
+
+.profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-trigger:hover {
+  background: #f1f5f9;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1000;
+  margin-top: 0.5rem;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.dropdown-item:hover {
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+.dropdown-item svg {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.dropdown-item:hover svg {
+  color: #2563eb;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.5rem 0;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode .top-navbar {
+  background: #1e293b;
+  border-bottom-color: #334155;
+}
+
+.dark-mode .nav-title {
+  background: linear-gradient(135deg, #e2e8f0 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode .nav-menu-link {
+  color: #94a3b8;
+}
+
+.dark-mode .nav-menu-link:hover {
+  background: #334155;
+  color: #60a5fa;
+}
+
+.dark-mode .nav-menu-link.active {
+  background: #2563eb;
+  color: white;
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #94a3b8;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+  background: #334155;
+  color: #60a5fa;
+}
+
+.dark-mode .profile-trigger:hover {
+  background: #334155;
+}
+
+.dark-mode .profile-name {
+  color: #e2e8f0;
+}
+
+.dark-mode .profile-dropdown {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark-mode .dropdown-item {
+  color: #e2e8f0;
+}
+
+.dark-mode .dropdown-item:hover {
+  background: #334155;
+  color: #60a5fa;
+}
+
+.dark-mode .dropdown-item svg {
+  color: #94a3b8;
+}
+
+.dark-mode .dropdown-item:hover svg {
+  color: #60a5fa;
+}
+
+.dark-mode .dropdown-divider {
+  background: #334155;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .top-navbar {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-title {
+    display: none;
+  }
+  
+  .profile-name {
+    display: none;
+  }
+  
+  .nav-right {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-navbar {
+    padding: 0.5rem;
+  }
+  
+  .nav-logo {
+    width: 32px;
+    height: 32px;
+  }
+} 
